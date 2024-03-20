@@ -10,7 +10,7 @@
                 </div>
                 <div class="about-caption">
                     <br>
-                    <h2 class="section-title mb-3">KOTA SUMENEP</h2>
+                    <h2 class="section-title mb-3">KOTA LAMONGAN</h2>
                     <p>
                         Sumenep, sebuah kota yang terletak di Pulau Madura, Jawa Timur, Indonesia, adalah sebuah tempat yang sarat dengan sejarah,
                         kebudayaan, dan pesona alam yang memikat. Sebagai ibu kota Kabupaten Sumenep, kota ini telah menjadi pusat kegiatan politik,

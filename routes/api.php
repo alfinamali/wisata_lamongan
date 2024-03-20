@@ -27,11 +27,9 @@ Route::get('wisata/{id}', [TempatWisataController::class, 'show']);
 Route::post('wisata/{id}', [TempatWisataController::class, 'update']);
 Route::delete('wisata/{id}', [TempatWisataController::class, 'destroy']);
 // Route::get('bukit/{id}', [TempatWisataController::class, 'image']);
-Route::get('bukit', [TempatWisataController::class, 'bukit']);
-Route::get('pantai', [TempatWisataController::class, 'pantai']);
-Route::get('taman', [TempatWisataController::class, 'taman']);
-Route::get('pemandian', [TempatWisataController::class, 'pemandian']);
-Route::get('others', [TempatWisataController::class, 'others']);
+Route::get('alam', [TempatWisataController::class, 'alam']);
+Route::get('religi', [TempatWisataController::class, 'religi']);
+Route::get('umkm', [TempatWisataController::class, 'umkm']);
 // Route::post('/auth/register', [AuthController::class, 'register']);
 // Route::post('/auth/login', [AuthController::class, 'login']);
 

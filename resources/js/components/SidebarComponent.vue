@@ -5,7 +5,7 @@
     <!-- Brand Logo -->
     <a href="#" class="brand-link bg-primary">
         <img :src="'/gambar/us.png'" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" >
-        <span class="brand-text font-weight-dark">Kelompok SM-1</span>
+        <span class="brand-text font-weight-dark">LAMONGAN</span>
     </a>
 
     <!-- Sidebar -->
@@ -16,7 +16,7 @@
                 <img :src="'/gambar/su.png'" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">WISATA SUMENEP</a>
+                <a href="#" class="d-block">WISATA LAMONGAN</a>
             </div>
         </div>
 
@@ -40,7 +40,7 @@
                     <router-link to="data-wisata" class="nav-link">
                         <i class="nav-icon fas fa-atlas"></i>
                         <p>
-                            Data Wisata Sumenep
+                            Data Wisata Lamongan
                         </p>
                     </router-link>
                 </li>

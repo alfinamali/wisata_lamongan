@@ -3,7 +3,7 @@
     <section class="jumbotron text-center">
       <div class="container">
         <h1 class="jumbotron-heading">Selamat Datang</h1>
-        <p class="lead text-muted">Temukan tempat wisata di Sumenep yang ingin kamu kunjungi</p>
+        <p class="lead text-muted">Temukan tempat wisata di Lamongan yang ingin kamu kunjungi</p>
         <p>
           <!-- <a href="#" class="btn btn-primary my-2">Main call to action</a>
             <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->

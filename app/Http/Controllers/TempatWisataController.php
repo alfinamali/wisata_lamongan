@@ -48,6 +48,7 @@ class TempatWisataController extends Controller
             'deskripsi' => 'required',
 
             'lokasi' => 'required',
+            'harga' => 'required',
         ]);
 
         $images = $request->file('images');
@@ -60,6 +61,7 @@ class TempatWisataController extends Controller
         $tempatWisata->deskripsi = $request->deskripsi;
         $tempatWisata->images = $images->hashName();
         $tempatWisata->lokasi = $request->lokasi;
+        $tempatWisata->harga = $request->harga;
 
         $tempatWisata->save();
 
@@ -109,6 +111,7 @@ class TempatWisataController extends Controller
             'deskripsi' => 'required',
             'images' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'lokasi' => 'required',
+            'harga' => 'required',
         ]);
 
         $images = $request->file('images');
@@ -121,6 +124,7 @@ class TempatWisataController extends Controller
         $tempatWisata->deskripsi = $request->deskripsi;
         $tempatWisata->images = $images->hashName();
         $tempatWisata->lokasi = $request->lokasi;
+        $tempatWisata->harga = $request->harga;
 
         $tempatWisata->save();
 
@@ -145,7 +149,7 @@ class TempatWisataController extends Controller
         ]);
     }
 
-    public function bukit()
+    public function alam()
     {
         $tempatWisata = TempatWisata::where('destinasi_id', 2)->get();
         return response()->json([
@@ -153,7 +157,7 @@ class TempatWisataController extends Controller
         ]);
     }
 
-    public function pantai()
+    public function religi()
     {
         $tempatWisata = TempatWisata::where('destinasi_id', 1)->get();
         return response()->json([
@@ -161,24 +165,9 @@ class TempatWisataController extends Controller
         ]);
     }
 
-    public function taman()
+    public function umkm()
     {
         $tempatWisata = TempatWisata::where('destinasi_id', 3)->get();
-        return response()->json([
-            'data' => $tempatWisata
-        ]);
-    }
-
-    public function pemandian()
-    {
-        $tempatWisata = TempatWisata::where('destinasi_id', 4)->get();
-        return response()->json([
-            'data' => $tempatWisata
-        ]);
-    }
-    public function others()
-    {
-        $tempatWisata = TempatWisata::where('destinasi_id', 5)->get();
         return response()->json([
             'data' => $tempatWisata
         ]);

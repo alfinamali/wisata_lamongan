@@ -2,7 +2,7 @@
     <!-- Page Navbar -->
     <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
         <div class="container">
-            <a class="logo" href="#">SM-1</a>
+            <a class="logo" href="#"></a>
             <ul class="nav">
                 <li class="item">
                     <a class="link" href="#home">Home</a>

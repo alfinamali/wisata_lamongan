@@ -15,6 +15,7 @@ class TempatWisata extends Model
         'deskripsi',
         'image',
         'lokasi',
+        'harga',
     ];
 
     public function destinasi()

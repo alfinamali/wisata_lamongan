@@ -17,7 +17,7 @@
           <!-- <h1 class="jumbotron-heading">Selamat Datang</h1>
         <p class="lead text-muted">Temukan tempat wisata di Sumenep yang ingin kamu kunjungi</p> -->
         <h1 class="display-4" style="color: #0077b6;">Selamat Datang</h1>
-        <h5 style="color: #233d4d;">Temukan tempat wisata di Sumenep yang ingin kamu kunjungi</h5>
+        <h5 style="color: #233d4d;">Temukan tempat wisata di Lamongan yang ingin kamu kunjungi</h5>
           <p>
             <!-- <a href="#" class="btn btn-primary my-2">Main call to action</a>
               <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
