@@ -5136,7 +5136,7 @@ __webpack_require__.r(__webpack_exports__);
         // Menghandle respon logout yang sukses
         console.log(response.data.message);
         // Redirect ke halaman login
-        window.location.href = '/login';
+        window.location.href = '/';
       })["catch"](function (error) {
         // Menghandle error saat logout
         console.error(error);
@@ -5661,7 +5661,7 @@ var render = function render() {
   }, [_c("img", {
     staticClass: "about-img",
     attrs: {
-      src: "/templatepage/assets/imgs/sumenep3.jpg",
+      src: "/templatepage/assets/imgs/tugu_lmg.png",
       alt: "Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
     }
   })]), _vm._v(" "), _vm._m(0)])])]);
@@ -5673,7 +5673,7 @@ var staticRenderFns = [function () {
     staticClass: "about-caption"
   }, [_c("br"), _vm._v(" "), _c("h2", {
     staticClass: "section-title mb-3"
-  }, [_vm._v("KOTA SUMENEP")]), _vm._v(" "), _c("p", [_vm._v("\n                    Sumenep, sebuah kota yang terletak di Pulau Madura, Jawa Timur, Indonesia, adalah sebuah tempat yang sarat dengan sejarah,\n                    kebudayaan, dan pesona alam yang memikat. Sebagai ibu kota Kabupaten Sumenep, kota ini telah menjadi pusat kegiatan politik,\n                    ekonomi, dan budaya di wilayahnya."), _c("br"), _c("br"), _vm._v("\n                    Kota Sumenep memiliki warisan sejarah yang kaya, terutama dalam hal kebudayaan dan tradisi. Pusat kebudayaan yang terkenal di\n                    kota ini adalah Keraton Sumenep, sebuah kompleks istana yang merupakan pusat kekuasaan Kesultanan Sumenep pada masa lalu. Keraton\n                    ini memancarkan keindahan arsitektur yang megah dan mengingatkan kita akan kemegahan masa lampau."), _c("br"), _c("br"), _vm._v("\n                    Selain kekayaan sejarahnya, Sumenep juga menawarkan pesona alam yang menakjubkan. Salah satu tempat yang wajib dikunjungi adalah\n                    Pantai Lombang. Dengan pasir putih yang halus dan air laut yang jernih, pantai ini menjadi tempat yang ideal untuk bersantai,\n                    berenang, atau bahkan melakukan kegiatan bersama keluarga dan teman-teman."), _c("br"), _c("br"), _vm._v("\n                    Dengan segala pesonanya, Sumenep siap menyambut pengunjung dengan kehangatan dan keramahan khasnya. Kota ini menawarkan pengalaman\n                    yang tak terlupakan, baik bagi para wisatawan lokal maupun mancanegara. Jadi, jika Anda mencari destinasi yang memadukan sejarah,\n                    budaya, dan keindahan alam, Sumenep adalah pilihan yang tepat. Selamat datang di kota Sumenep, di mana Anda akan menemukan pesona\n                    yang tak terlupakan dan pengalaman yang memikat."), _c("br"), _c("br")])]);
+  }, [_vm._v("KECAMATAN DEKET")]), _vm._v(" "), _c("p", [_vm._v("\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \n                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "), _c("br"), _c("br"), _vm._v("\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \n                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."), _c("br"), _c("br")])]);
 }];
 render._withStripped = true;
 
@@ -5739,7 +5739,7 @@ var staticRenderFns = [function () {
     staticClass: "jumbotron-heading"
   }, [_vm._v("Selamat Datang")]), _vm._v(" "), _c("p", {
     staticClass: "lead text-muted"
-  }, [_vm._v("Temukan tempat wisata di Sumenep yang ingin kamu kunjungi")]), _vm._v(" "), _c("p")])]);
+  }, [_vm._v("Temukan tempat wisata dan berbagai produk umkm di kecamatan Deket yang ingin kamu kunjungi")]), _vm._v(" "), _c("p")])]);
 }];
 render._withStripped = true;
 
@@ -5779,7 +5779,7 @@ var staticRenderFns = [function () {
     staticClass: "header-title"
   }, [_c("span", {
     staticClass: "up"
-  }, [_vm._v("WELCOME TO SUMENEP")]), _c("br")]), _vm._v(" "), _c("p", {
+  }, [_vm._v("WELCOME TO WISDEKET")]), _c("br")]), _vm._v(" "), _c("p", {
     staticClass: "header-subtitle"
   }, [_vm._v("FIND YOUR NEXT TOUR")])])]);
 }];
@@ -5816,7 +5816,7 @@ var render = function render() {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("SM-1")]), _vm._v(" "), _c("ul", {
+  }, [_vm._v("WisDeket")]), _vm._v(" "), _c("ul", {
     staticClass: "nav"
   }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("li", {
     staticClass: "item"
@@ -5904,7 +5904,7 @@ var render = function render() {
   }, [_c("a", {
     staticClass: "nav-link",
     attrs: {
-      href: "/login"
+      href: "/"
     },
     on: {
       click: _vm.logout
@@ -6041,12 +6041,12 @@ var render = function render() {
   }, [_c("img", {
     staticClass: "brand-image img-circle elevation-3",
     attrs: {
-      src: "/gambar/us.png",
+      src: "/gambar/tugu_lmg.png",
       alt: "AdminLTE Logo"
     }
   }), _vm._v(" "), _c("span", {
     staticClass: "brand-text font-weight-dark"
-  }, [_vm._v("Kelompok SM-1")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("WisDeket")])]), _vm._v(" "), _c("div", {
     staticClass: "sidebar"
   }, [_c("div", {
     staticClass: "user-panel mt-3 pb-3 mb-3 d-flex"
@@ -6098,7 +6098,7 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("WISATA SUMENEP")])]);
+  }, [_vm._v("WISATA DEKET")])]);
 }];
 render._withStripped = true;
 
@@ -6501,7 +6501,7 @@ var staticRenderFns = [function () {
     staticStyle: {
       color: "#233d4d"
     }
-  }, [_vm._v("Temukan tempat wisata di Sumenep yang ingin kamu kunjungi")]), _vm._v(" "), _c("p")])]);
+  }, [_vm._v("Temukan tempat wisata dan produk umkm di Kecamatan Deket")]), _vm._v(" "), _c("p")])]);
 }];
 render._withStripped = true;
 

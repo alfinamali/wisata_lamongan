@@ -4,8 +4,8 @@
 <aside class="main-sidebar sidebar-light-primary elevation-4 border-bottom-0">
     <!-- Brand Logo -->
     <a href="#" class="brand-link bg-primary">
-        <img :src="'/gambar/us.png'" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" >
-        <span class="brand-text font-weight-dark">Kelompok SM-1</span>
+        <img :src="'/gambar/tugu_lmg.png'" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" >
+        <span class="brand-text font-weight-dark">WisDeket</span>
     </a>
 
     <!-- Sidebar -->
@@ -16,7 +16,7 @@
                 <img :src="'/gambar/su.png'" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">WISATA SUMENEP</a>
+                <a href="#" class="d-block">WISATA DEKET</a>
             </div>
         </div>
 

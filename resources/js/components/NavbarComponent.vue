@@ -54,7 +54,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="/login" class="nav-link" @click="logout">
+            <a href="/" class="nav-link" @click="logout">
                     <i class="nav-icon fas fa-sign-out-alt"></i>
                 </a>
                 </li>
@@ -71,7 +71,7 @@ export default {
           // Menghandle respon logout yang sukses
           console.log(response.data.message);
           // Redirect ke halaman login
-          window.location.href = '/login';
+          window.location.href = '/';
         })
         .catch(error => {
           // Menghandle error saat logout
