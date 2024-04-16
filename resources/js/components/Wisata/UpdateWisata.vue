@@ -48,6 +48,10 @@
                       <label for="lokasi" class="form-label">Lokasi</label>
                       <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" v-model="items.lokasi" />
                     </div>
+                    <div class="mb-3">
+                      <label for="lokasi" class="form-label">Harga</label>
+                      <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" v-model="items.harga" />
+                    </div>
 
                     <button type="submit" class="btn btn-md btn-primary">Save</button>
                     <router-link to="data-wisata" type="submit" class="btn btn-md btn-warning">Back</router-link>
@@ -74,7 +78,8 @@ export default {
         destinasi_id: "",
         images: null,
         deskripsi: "",
-        lokasi: ""
+        lokasi: "",
+        harga: ""
       },
       fileName: "",
       itemID: null
@@ -93,6 +98,7 @@ export default {
       formData.append("images", this.items.images);
       formData.append("deskripsi", this.items.deskripsi);
       formData.append("lokasi", this.items.lokasi);
+      formData.append("harga", this.items.harga);
 
       axios
         .post(`/api/wisata/${this.itemID}`, formData)

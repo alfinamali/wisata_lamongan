@@ -43,6 +43,10 @@
                                 <label for="lokasi" class="form-label">Lokasi</label>
                                 <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" v-model="form.lokasi" />
                             </div>
+                            <div class="mb-3">
+                                <label for="lokasi" class="form-label">Harga</label>
+                                <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" v-model="form.harga" />
+                            </div>
 
                             <button type="submit" class="btn btn-md btn-primary">Save</button>
                             <router-link to="data-wisata" class="btn btn-md btn-warning">Back</router-link>
@@ -72,6 +76,7 @@ export default {
             images: null,
             deskripsi: "",
             lokasi: "",
+            harga: "",
         },
         };
     },
@@ -83,6 +88,7 @@ export default {
         formData.append("images", this.form.images); // tambahkan field image ke objek FormData
         formData.append("deskripsi", this.form.deskripsi);
         formData.append("lokasi", this.form.lokasi);
+        formData.append("harga", this.form.harga);
 
         axios
             .post("/api/wisata", formData)
@@ -96,6 +102,7 @@ export default {
             this.form.images = null;
             this.form.deskripsi = "";
             this.form.lokasi = "";
+            this.form.harga = "";
             // Reset input file
             this.$refs.myImage.value = null;
 

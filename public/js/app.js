@@ -5259,7 +5259,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         destinasi_id: "",
         images: null,
         deskripsi: "",
-        lokasi: ""
+        lokasi: "",
+        harga: ""
       }
     };
   },
@@ -5272,6 +5273,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       formData.append("images", this.form.images); // tambahkan field image ke objek FormData
       formData.append("deskripsi", this.form.deskripsi);
       formData.append("lokasi", this.form.lokasi);
+      formData.append("harga", this.form.harga);
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/wisata", formData).then(function (response) {
         console.log(response);
         // reset form
@@ -5281,6 +5283,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         _this.form.images = null;
         _this.form.deskripsi = "";
         _this.form.lokasi = "";
+        _this.form.harga = "";
         // Reset input file
         _this.$refs.myImage.value = null;
 
@@ -5560,7 +5563,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         destinasi_id: "",
         images: null,
         deskripsi: "",
-        lokasi: ""
+        lokasi: "",
+        harga: ""
       },
       fileName: "",
       itemID: null
@@ -5595,6 +5599,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       formData.append("images", this.items.images);
       formData.append("deskripsi", this.items.deskripsi);
       formData.append("lokasi", this.items.lokasi);
+      formData.append("harga", this.items.harga);
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/wisata/".concat(this.itemID), formData).then(function (response) {
         console.log(response);
         _this2.showAlert();
@@ -5739,7 +5744,7 @@ var staticRenderFns = [function () {
     staticClass: "jumbotron-heading"
   }, [_vm._v("Selamat Datang")]), _vm._v(" "), _c("p", {
     staticClass: "lead text-muted"
-  }, [_vm._v("Temukan tempat wisata dan berbagai produk umkm di kecamatan Deket yang ingin kamu kunjungi")]), _vm._v(" "), _c("p")])]);
+  }, [_vm._v("Temukan tempat wisata di Lamongan yang ingin kamu kunjungi")]), _vm._v(" "), _c("p")])]);
 }];
 render._withStripped = true;
 
@@ -5779,7 +5784,7 @@ var staticRenderFns = [function () {
     staticClass: "header-title"
   }, [_c("span", {
     staticClass: "up"
-  }, [_vm._v("WELCOME TO WISDEKET")]), _c("br")]), _vm._v(" "), _c("p", {
+  }, [_vm._v("WELCOME TO LAMONGAN")]), _c("br")]), _vm._v(" "), _c("p", {
     staticClass: "header-subtitle"
   }, [_vm._v("FIND YOUR NEXT TOUR")])])]);
 }];
@@ -5816,7 +5821,7 @@ var render = function render() {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("WisDeket")]), _vm._v(" "), _c("ul", {
+  }), _vm._v(" "), _c("ul", {
     staticClass: "nav"
   }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("li", {
     staticClass: "item"
@@ -6046,7 +6051,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("span", {
     staticClass: "brand-text font-weight-dark"
-  }, [_vm._v("WisDeket")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("LAMONGAN")])]), _vm._v(" "), _c("div", {
     staticClass: "sidebar"
   }, [_c("div", {
     staticClass: "user-panel mt-3 pb-3 mb-3 d-flex"
@@ -6085,7 +6090,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "nav-icon fas fa-atlas"
-  }), _vm._v(" "), _c("p", [_vm._v("\r\n                            Data Wisata Sumenep\r\n                        ")])])], 1)])])])]);
+  }), _vm._v(" "), _c("p", [_vm._v("\r\n                            Data Wisata Lamongan\r\n                        ")])])], 1)])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -6098,7 +6103,7 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("WISATA DEKET")])]);
+  }, [_vm._v("WISATA LAMONGAN")])]);
 }];
 render._withStripped = true;
 
@@ -6284,6 +6289,34 @@ var render = function render() {
         _vm.$set(_vm.form, "lokasi", $event.target.value);
       }
     }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "mb-3"
+  }, [_c("label", {
+    staticClass: "form-label",
+    attrs: {
+      "for": "lokasi"
+    }
+  }, [_vm._v("Harga")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.harga,
+      expression: "form.harga"
+    }],
+    staticClass: "form-control form-control-sm",
+    attrs: {
+      type: "text",
+      "aria-label": ".form-control-sm example"
+    },
+    domProps: {
+      value: _vm.form.harga
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "harga", $event.target.value);
+      }
+    }
   })]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-md btn-primary",
     attrs: {
@@ -6361,7 +6394,7 @@ var render = function render() {
       attrs: {
         src: "/storage/images/" + item.images
       }
-    })]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.destinasi_id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.deskripsi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.lokasi))]), _vm._v(" "), _c("td", [_c("router-link", {
+    })]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.destinasi_id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.deskripsi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.lokasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.harga))]), _vm._v(" "), _c("td", [_c("router-link", {
       staticClass: "btn btn-sm btn-primary mr-1",
       attrs: {
         to: "update-wisata"
@@ -6414,6 +6447,10 @@ var staticRenderFns = [function () {
       scope: "col"
     }
   }, [_vm._v("LOKASI")]), _vm._v(" "), _c("th", {
+    attrs: {
+      scope: "col"
+    }
+  }, [_vm._v("HARGA")]), _vm._v(" "), _c("th", {
     attrs: {
       scope: "col"
     }
@@ -6501,7 +6538,7 @@ var staticRenderFns = [function () {
     staticStyle: {
       color: "#233d4d"
     }
-  }, [_vm._v("Temukan tempat wisata dan produk umkm di Kecamatan Deket")]), _vm._v(" "), _c("p")])]);
+  }, [_vm._v("Temukan tempat wisata di Lamongan yang ingin kamu kunjungi")]), _vm._v(" "), _c("p")])]);
 }];
 render._withStripped = true;
 
@@ -6845,6 +6882,34 @@ var render = function render() {
       input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.items, "lokasi", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "mb-3"
+  }, [_c("label", {
+    staticClass: "form-label",
+    attrs: {
+      "for": "lokasi"
+    }
+  }, [_vm._v("Harga")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.items.harga,
+      expression: "items.harga"
+    }],
+    staticClass: "form-control form-control-sm",
+    attrs: {
+      type: "text",
+      "aria-label": ".form-control-sm example"
+    },
+    domProps: {
+      value: _vm.items.harga
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.items, "harga", $event.target.value);
       }
     }
   })]), _vm._v(" "), _c("button", {

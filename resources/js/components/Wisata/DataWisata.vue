@@ -27,6 +27,7 @@
                           <th scope="col">KATEGORI</th>
                           <th scope="col">DESKRIPSI</th>
                           <th scope="col">LOKASI</th>
+                          <th scope="col">HARGA</th>
                           <th scope="col">AKSI</th>
                         </tr>
                       </thead>
@@ -39,6 +40,7 @@
                           <td>{{ item.destinasi_id }}</td>
                           <td>{{ item.deskripsi }}</td>
                           <td>{{ item.lokasi }}</td>
+                          <td>{{ item.harga }}</td>
                           <td>
                             <router-link to="update-wisata" class="btn btn-sm btn-primary mr-1"><i class="fas fa-edit"></i></router-link>
                             <button class="btn btn-sm btn-danger mr-1" @click="hapusdata(item.id)"><i class="fas fa-trash-alt"></i></button>

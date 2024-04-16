@@ -40,7 +40,7 @@
                     <router-link to="data-wisata" class="nav-link">
                         <i class="nav-icon fas fa-atlas"></i>
                         <p>
-                            Data Wisata Sumenep
+                            Data Wisata Lamongan
                         </p>
                     </router-link>
                 </li>
