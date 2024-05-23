@@ -19,35 +19,41 @@
                     <div class="d-flex justify-content-end">
                       <router-link to="create-wisata" class="btn btn-md btn-success">TAMBAH WISATA</router-link>
                     </div>
-                    <table class="table table-striped table-bordered mt-4">
-                      <thead class="thead-dark">
-                        <tr>
-                          <th scope="col">GAMBAR</th>
-                          <th scope="col">NAMA WISATA</th>
-                          <th scope="col">KATEGORI</th>
-                          <th scope="col">DESKRIPSI</th>
-                          <th scope="col">LOKASI</th>
-                          <th scope="col">HARGA</th>
-                          <th scope="col">AKSI</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr v-for="item in items" :key="item.message">
-                          <td>
-                            <img :src="'/storage/images/' + item.images" class="rounded" style="width: 120px" />
-                          </td>
-                          <td>{{ item.nama_destinasi }}</td>
-                          <td>{{ item.destinasi_id }}</td>
-                          <td>{{ item.deskripsi }}</td>
-                          <td>{{ item.lokasi }}</td>
-                          <td>{{ item.harga }}</td>
-                          <td>
-                            <router-link to="update-wisata" class="btn btn-sm btn-primary mr-1"><i class="fas fa-edit"></i></router-link>
-                            <button class="btn btn-sm btn-danger mr-1" @click="hapusdata(item.id)"><i class="fas fa-trash-alt"></i></button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-bordered mt-4">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">GAMBAR</th>
+                            <th scope="col">NAMA DESTINASI</th>
+                            <th scope="col">KATEGORI</th>
+                            <th scope="col">DESKRIPSI</th>
+                            <th scope="col">LOKASI</th>
+                            <th scope="col">HARGA</th>
+                            <th scope="col">FASILITAS</th>
+                            <th scope="col">MAPS</th>
+                            <th scope="col">AKSI</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr v-for="item in items" :key="item.message">
+                            <td>
+                              <img :src="'/storage/images/' + item.images" class="rounded" style="width: 120px" />
+                            </td>
+                            <td>{{ item.nama_destinasi }}</td>
+                            <td>{{ item.destinasi_id }}</td>
+                            <td>{{ item.deskripsi }}</td>
+                            <td>{{ item.lokasi }}</td>
+                            <td>{{ item.harga }}</td>
+                            <td>{{ item.fasilitas }}</td>
+                            <td>{{ item.maps }}</td>
+                            <td>
+                              <router-link to="update-wisata" class="btn btn-sm btn-primary mr-1"><i class="fas fa-edit"></i></router-link>
+                              <button class="btn btn-sm btn-danger mr-1" @click="hapusdata(item.id)"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>

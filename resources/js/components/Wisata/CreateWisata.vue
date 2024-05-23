@@ -47,6 +47,14 @@
                                 <label for="lokasi" class="form-label">Harga</label>
                                 <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" v-model="form.harga" />
                             </div>
+                            <div class="mb-3">
+                                <label for="lokasi" class="form-label">Fasilitas</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" v-model="form.fasilitas"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="lokasi" class="form-label">Maps</label>
+                                <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" v-model="form.maps" />
+                            </div>
 
                             <button type="submit" class="btn btn-md btn-primary">Save</button>
                             <router-link to="data-wisata" class="btn btn-md btn-warning">Back</router-link>
@@ -77,6 +85,8 @@ export default {
             deskripsi: "",
             lokasi: "",
             harga: "",
+            fasilitas: "",
+            maps: "",
         },
         };
     },
@@ -89,6 +99,8 @@ export default {
         formData.append("deskripsi", this.form.deskripsi);
         formData.append("lokasi", this.form.lokasi);
         formData.append("harga", this.form.harga);
+        formData.append("fasilitas", this.form.fasilitas);
+        formData.append("maps", this.form.maps);
 
         axios
             .post("/api/wisata", formData)
@@ -103,6 +115,8 @@ export default {
             this.form.deskripsi = "";
             this.form.lokasi = "";
             this.form.harga = "";
+            this.form.fasilitas = "";
+            this.form.maps = "";
             // Reset input file
             this.$refs.myImage.value = null;
 
