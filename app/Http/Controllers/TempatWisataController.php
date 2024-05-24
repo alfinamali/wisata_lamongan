@@ -46,9 +46,11 @@ class TempatWisataController extends Controller
             'nama_destinasi' => 'required',
             'destinasi_id' => 'required',
             'deskripsi' => 'required',
-
+            'images' => 'required|image',
             'lokasi' => 'required',
             'harga' => 'required',
+            'fasilitas' => 'required',
+            'maps' => 'required',
         ]);
 
         $images = $request->file('images');
@@ -62,6 +64,8 @@ class TempatWisataController extends Controller
         $tempatWisata->images = $images->hashName();
         $tempatWisata->lokasi = $request->lokasi;
         $tempatWisata->harga = $request->harga;
+        $tempatWisata->fasilitas = $request->fasilitas;
+        $tempatWisata->maps = $request->maps;
 
         $tempatWisata->save();
 
@@ -112,6 +116,8 @@ class TempatWisataController extends Controller
             'images' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'lokasi' => 'required',
             'harga' => 'required',
+            'fasilitas' => 'required',
+            'maps' => 'required',
         ]);
 
         $images = $request->file('images');
@@ -125,6 +131,8 @@ class TempatWisataController extends Controller
         $tempatWisata->images = $images->hashName();
         $tempatWisata->lokasi = $request->lokasi;
         $tempatWisata->harga = $request->harga;
+        $tempatWisata->fasilitas = $request->fasilitas;
+        $tempatWisata->maps = $request->maps;
 
         $tempatWisata->save();
 

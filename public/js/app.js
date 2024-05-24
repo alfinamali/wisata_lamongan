@@ -5260,7 +5260,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         images: null,
         deskripsi: "",
         lokasi: "",
-        harga: ""
+        harga: "",
+        fasilitas: "",
+        maps: ""
       }
     };
   },
@@ -5274,6 +5276,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       formData.append("deskripsi", this.form.deskripsi);
       formData.append("lokasi", this.form.lokasi);
       formData.append("harga", this.form.harga);
+      formData.append("fasilitas", this.form.fasilitas);
+      formData.append("maps", this.form.maps);
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/wisata", formData).then(function (response) {
         console.log(response);
         // reset form
@@ -5284,6 +5288,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         _this.form.deskripsi = "";
         _this.form.lokasi = "";
         _this.form.harga = "";
+        _this.form.fasilitas = "";
+        _this.form.maps = "";
         // Reset input file
         _this.$refs.myImage.value = null;
 
@@ -6317,6 +6323,62 @@ var render = function render() {
         _vm.$set(_vm.form, "harga", $event.target.value);
       }
     }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "mb-3"
+  }, [_c("label", {
+    staticClass: "form-label",
+    attrs: {
+      "for": "lokasi"
+    }
+  }, [_vm._v("Fasilitas")]), _vm._v(" "), _c("textarea", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.fasilitas,
+      expression: "form.fasilitas"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      id: "exampleFormControlTextarea2",
+      rows: "3"
+    },
+    domProps: {
+      value: _vm.form.fasilitas
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "fasilitas", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "mb-3"
+  }, [_c("label", {
+    staticClass: "form-label",
+    attrs: {
+      "for": "lokasi"
+    }
+  }, [_vm._v("Maps")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.maps,
+      expression: "form.maps"
+    }],
+    staticClass: "form-control form-control-sm",
+    attrs: {
+      type: "text",
+      "aria-label": ".form-control-sm example"
+    },
+    domProps: {
+      value: _vm.form.maps
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "maps", $event.target.value);
+      }
+    }
   })]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-md btn-primary",
     attrs: {
@@ -6381,7 +6443,9 @@ var render = function render() {
     attrs: {
       to: "create-wisata"
     }
-  }, [_vm._v("TAMBAH WISATA")])], 1), _vm._v(" "), _c("table", {
+  }, [_vm._v("TAMBAH WISATA")])], 1), _vm._v(" "), _c("div", {
+    staticClass: "table-responsive"
+  }, [_c("table", {
     staticClass: "table table-striped table-bordered mt-4"
   }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.items, function (item) {
     return _c("tr", {
@@ -6394,7 +6458,7 @@ var render = function render() {
       attrs: {
         src: "/storage/images/" + item.images
       }
-    })]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.destinasi_id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.deskripsi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.lokasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.harga))]), _vm._v(" "), _c("td", [_c("router-link", {
+    })]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.destinasi_id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.deskripsi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.lokasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.harga))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.fasilitas))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.maps))]), _vm._v(" "), _c("td", [_c("router-link", {
       staticClass: "btn btn-sm btn-primary mr-1",
       attrs: {
         to: "update-wisata"
@@ -6411,7 +6475,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fas fa-trash-alt"
     })])], 1)]);
-  }), 0)])])])])])])])])], 1);
+  }), 0)])])])])])])])])])], 1);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -6434,7 +6498,7 @@ var staticRenderFns = [function () {
     attrs: {
       scope: "col"
     }
-  }, [_vm._v("NAMA WISATA")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("NAMA DESTINASI")]), _vm._v(" "), _c("th", {
     attrs: {
       scope: "col"
     }
@@ -6451,6 +6515,14 @@ var staticRenderFns = [function () {
       scope: "col"
     }
   }, [_vm._v("HARGA")]), _vm._v(" "), _c("th", {
+    attrs: {
+      scope: "col"
+    }
+  }, [_vm._v("FASILITAS")]), _vm._v(" "), _c("th", {
+    attrs: {
+      scope: "col"
+    }
+  }, [_vm._v("MAPS")]), _vm._v(" "), _c("th", {
     attrs: {
       scope: "col"
     }
