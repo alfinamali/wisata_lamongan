@@ -32,7 +32,7 @@
                                 <!-- <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" v-model="form.destinasi_id" /> -->
                                 <select class="form-control select2" v-model="form.destinasi_id">
                                     <option value >Pilih Kategori</option>
-                                    <option v-for="item in destinasis" :key="item.id" :value="item.id"> {{ item.jenis_destinasi }}</option>
+                                    <option v-for="destinasi in destinasis" :key="destinasi.id" :value="destinasi.id"> {{ destinasi.jenis_destinasi }}</option>
                                 </select>
                             </div>
                             <div class="mb-3">

@@ -5744,7 +5744,7 @@ var staticRenderFns = [function () {
     staticClass: "jumbotron-heading"
   }, [_vm._v("Selamat Datang")]), _vm._v(" "), _c("p", {
     staticClass: "lead text-muted"
-  }, [_vm._v("Temukan tempat wisata di Lamongan yang ingin kamu kunjungi")]), _vm._v(" "), _c("p")])]);
+  }, [_vm._v("Temukan tempat wisata dan berbagai produk umkm di kecamatan Deket yang ingin kamu kunjungi")]), _vm._v(" "), _c("p")])]);
 }];
 render._withStripped = true;
 
@@ -5784,7 +5784,7 @@ var staticRenderFns = [function () {
     staticClass: "header-title"
   }, [_c("span", {
     staticClass: "up"
-  }, [_vm._v("WELCOME TO LAMONGAN")]), _c("br")]), _vm._v(" "), _c("p", {
+  }, [_vm._v("WELCOME TO WISDEKET")]), _c("br")]), _vm._v(" "), _c("p", {
     staticClass: "header-subtitle"
   }, [_vm._v("FIND YOUR NEXT TOUR")])])]);
 }];
@@ -5821,7 +5821,7 @@ var render = function render() {
     attrs: {
       href: "#"
     }
-  }), _vm._v(" "), _c("ul", {
+  }, [_vm._v("WisDeket")]), _vm._v(" "), _c("ul", {
     staticClass: "nav"
   }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("li", {
     staticClass: "item"
@@ -6051,7 +6051,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("span", {
     staticClass: "brand-text font-weight-dark"
-  }, [_vm._v("LAMONGAN")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("WisDeket")])]), _vm._v(" "), _c("div", {
     staticClass: "sidebar"
   }, [_c("div", {
     staticClass: "user-panel mt-3 pb-3 mb-3 d-flex"
@@ -6103,7 +6103,7 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("WISATA LAMONGAN")])]);
+  }, [_vm._v("WISATA DEKET")])]);
 }];
 render._withStripped = true;
 
@@ -6226,13 +6226,13 @@ var render = function render() {
     attrs: {
       value: ""
     }
-  }, [_vm._v("Pilih Kategori")]), _vm._v(" "), _vm._l(_vm.destinasis, function (item) {
+  }, [_vm._v("Pilih Kategori")]), _vm._v(" "), _vm._l(_vm.destinasis, function (destinasi) {
     return _c("option", {
-      key: item.id,
+      key: destinasi.id,
       domProps: {
-        value: item.id
+        value: destinasi.id
       }
-    }, [_vm._v(" " + _vm._s(item.jenis_destinasi))]);
+    }, [_vm._v(" " + _vm._s(destinasi.jenis_destinasi))]);
   })], 2)]), _vm._v(" "), _c("div", {
     staticClass: "mb-3"
   }, [_c("label", {
@@ -6538,7 +6538,7 @@ var staticRenderFns = [function () {
     staticStyle: {
       color: "#233d4d"
     }
-  }, [_vm._v("Temukan tempat wisata di Lamongan yang ingin kamu kunjungi")]), _vm._v(" "), _c("p")])]);
+  }, [_vm._v("Temukan tempat wisata dan produk umkm di Kecamatan Deket")]), _vm._v(" "), _c("p")])]);
 }];
 render._withStripped = true;
 
