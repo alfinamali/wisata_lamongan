@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TempatWisataController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DestinasiController;
+use App\Http\Controllers\UmkmController;
 use App\Models\TempatWisata;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
@@ -35,6 +36,11 @@ Route::get('umkm', [TempatWisataController::class, 'umkm']);
 
 // Route::get('user/{id}', [AuthController::class, 'show']);
 // Route::get('/profile', [AuthController::class, 'getProfile']);
+Route::get('umkm', [UmkmController::class, 'index']);
+Route::post('umkm', [UmkmController::class, 'store']);
+Route::get('umkm/{id}', [UmkmController::class, 'show']);
+Route::post('umkm/{id}', [UmkmController::class, 'update']);
+Route::delete('umkm/{id}', [UmkmController::class, 'destroy']);
 
 
 
