@@ -185,6 +185,10 @@ class TempatWisataController extends Controller
     // {
     //     $user = Auth::user();
     //     $wisata = TempatWisata::findOrFail($request->id);
+    // public function toggleFavorite(Request $request)
+    // {
+    //     $user = Auth::user();
+    //     $wisata = TempatWisata::findOrFail($request->id);
 
     //     if ($user->favoritWisata()->where('wisata_id', $wisata->id)->exists()) {
     //         $user->favoritWisata()->detach($wisata->id);
@@ -193,7 +197,16 @@ class TempatWisataController extends Controller
     //         $user->favoritWisata()->attach($wisata->id);
     //         $isFavorit = true;
     //     }
+    //     if ($user->favoritWisata()->where('wisata_id', $wisata->id)->exists()) {
+    //         $user->favoritWisata()->detach($wisata->id);
+    //         $isFavorit = false;
+    //     } else {
+    //         $user->favoritWisata()->attach($wisata->id);
+    //         $isFavorit = true;
+    //     }
 
+    //     return response()->json(['is_favorit' => $isFavorit]);
+    // }
     //     return response()->json(['is_favorit' => $isFavorit]);
     // }
 }

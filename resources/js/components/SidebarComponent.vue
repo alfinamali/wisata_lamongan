@@ -44,6 +44,14 @@
                         </p>
                     </router-link>
                 </li>
+                <li class="nav-item">
+                    <router-link to="data-umkm" class="nav-link">
+                        <i class="nav-icon fas fa-atlas"></i>
+                        <p>
+                            Data UMKM Lamongan
+                        </p>
+                    </router-link>
+                </li>
                 <!-- <li class="nav-item">
                 <a href="/login" class="nav-link" @click="logout">
                     <i class="nav-icon fas fa-sign-out-alt"></i>
