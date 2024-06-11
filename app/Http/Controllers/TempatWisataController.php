@@ -173,13 +173,13 @@ class TempatWisataController extends Controller
         ]);
     }
 
-    public function umkm()
-    {
-        $tempatWisata = TempatWisata::where('destinasi_id', 3)->get();
-        return response()->json([
-            'data' => $tempatWisata
-        ]);
-    }
+    // public function umkm()
+    // {
+    //     $tempatWisata = TempatWisata::where('destinasi_id', 3)->get();
+    //     return response()->json([
+    //         'data' => $tempatWisata
+    //     ]);
+    // }
 
     // public function toggleFavorite(Request $request)
     // {
