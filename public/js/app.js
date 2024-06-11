@@ -5169,7 +5169,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   // components: { HeaderComponent },
   data: function data() {
     return {
-      destinasi: []
+      destinasi: [],
+      umkm: []
     };
   },
   methods: {
@@ -5191,11 +5192,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    fetchUmkm: function fetchUmkm() {
+      var _this2 = this;
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+        var response;
+        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+          while (1) switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/umkm");
+            case 2:
+              response = _context2.sent;
+              _this2.umkm = response.data.data;
+            case 4:
+            case "end":
+              return _context2.stop();
+          }
+        }, _callee2);
+      }))();
     }
   },
   created: function created() {
     // Panggil method fetchData saat pertama kali dijalankan
     this.fetchData();
+    this.fetchUmkm();
   }
 });
 
@@ -6259,7 +6280,7 @@ var render = function render() {
     staticClass: "section-title mb-6"
   }, [_vm._v("WISATA")]), _vm._v(" "), _c("div", {
     staticClass: "row"
-  }, _vm._l(_vm.destinasi, function (item) {
+  }, [_vm._l(_vm.destinasi, function (item) {
     return _c("div", {
       key: item.message,
       staticClass: "col-md-4 d-flex align-items-stretch mb-4"
@@ -6281,7 +6302,29 @@ var render = function render() {
     }, [_c("h5", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("p", {
       staticClass: "font-weight-normal"
     }, [_vm._v("Kategori:" + _vm._s(item.destinasi_id))])])])])]);
-  }), 0)])]);
+  }), _vm._v(" "), _vm._l(_vm.umkm, function (item) {
+    return _c("div", {
+      key: item.message,
+      staticClass: "col-md-4 d-flex align-items-stretch mb-4"
+    }, [_c("a", {
+      staticClass: "portfolio-card",
+      attrs: {
+        href: "#"
+      }
+    }, [_c("img", {
+      staticClass: "portfolio-card-img",
+      attrs: {
+        src: "/storage/images/" + item.images,
+        alt: "Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
+      }
+    }), _vm._v(" "), _c("span", {
+      staticClass: "portfolio-card-overlay"
+    }, [_c("span", {
+      staticClass: "portfolio-card-caption"
+    }, [_c("h5", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("p", {
+      staticClass: "font-weight-normal"
+    }, [_vm._v("Kategori: UMKM")])])])])]);
+  })], 2)])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
