@@ -5275,6 +5275,7 @@ __webpack_require__.r(__webpack_exports__);
         nama_destinasi: "",
         images: null,
         deskripsi: "",
+        lokasi: "",
         kontak: "",
         maps: ""
       }
@@ -5287,6 +5288,7 @@ __webpack_require__.r(__webpack_exports__);
       formData.append("nama_destinasi", this.form.nama_destinasi);
       formData.append("images", this.form.images);
       formData.append("deskripsi", this.form.deskripsi);
+      formData.append("lokasi", this.form.lokasi);
       formData.append("kontak", this.form.kontak);
       formData.append("maps", this.form.maps);
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/umkm", formData).then(function (response) {
@@ -5296,6 +5298,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.form.nama_destinasi = "";
         _this.form.images = null;
         _this.form.deskripsi = "";
+        _this.form.lokasi = "";
         _this.form.kontak = "";
         _this.form.maps = "";
         // Reset input file
@@ -6550,6 +6553,34 @@ var render = function render() {
   }, [_c("label", {
     staticClass: "form-label",
     attrs: {
+      "for": "lokasi"
+    }
+  }, [_vm._v("Lokasi")]), _vm._v(" "), _c("textarea", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.lokasi,
+      expression: "form.lokasi"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      id: "exampleFormControlTextarea1",
+      rows: "3"
+    },
+    domProps: {
+      value: _vm.form.lokasi
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "lokasi", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "mb-3"
+  }, [_c("label", {
+    staticClass: "form-label",
+    attrs: {
       "for": "kontak"
     }
   }, [_vm._v("Kontak")]), _vm._v(" "), _c("input", {
@@ -6969,7 +7000,7 @@ var render = function render() {
       attrs: {
         src: "/storage/images/" + item.images
       }
-    })]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.deskripsi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.kontak))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.maps))]), _vm._v(" "), _c("td", [_c("router-link", {
+    })]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.deskripsi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.lokasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.kontak))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.maps))]), _vm._v(" "), _c("td", [_c("router-link", {
       staticClass: "btn btn-sm btn-primary mr-1",
       attrs: {
         to: "update-umkm"
@@ -7014,6 +7045,10 @@ var staticRenderFns = [function () {
       scope: "col"
     }
   }, [_vm._v("DESKRIPSI")]), _vm._v(" "), _c("th", {
+    attrs: {
+      scope: "col"
+    }
+  }, [_vm._v("LOKASI")]), _vm._v(" "), _c("th", {
     attrs: {
       scope: "col"
     }

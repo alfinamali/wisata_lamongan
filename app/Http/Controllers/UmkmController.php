@@ -44,6 +44,7 @@ class UmkmController extends Controller
             'images' => 'required|image',
             'kontak' => 'required',
             'maps' => 'required',
+            'lokasi' => 'required',
         ]);
 
         $images = $request->file('images');
@@ -56,6 +57,7 @@ class UmkmController extends Controller
         $tempatUmkm->images = $images->hashName();
         $tempatUmkm->kontak = $request->kontak;
         $tempatUmkm->maps = $request->maps;
+        $tempatUmkm->lokasi = $request->lokasi;
 
         $tempatUmkm->save();
 
@@ -105,6 +107,7 @@ class UmkmController extends Controller
             'images' => 'required|image',
             'kontak' => 'required',
             'maps' => 'required',
+            'lokasi' => 'required',
         ]);
 
         $images = $request->file('images');
@@ -116,6 +119,7 @@ class UmkmController extends Controller
         $tempatUmkm->images = $images->hashName();
         $tempatUmkm->kontak = $request->kontak;
         $tempatUmkm->maps = $request->maps;
+        $tempatUmkm->lokasi = $request->lokasi;
 
         $tempatUmkm->save();
 
