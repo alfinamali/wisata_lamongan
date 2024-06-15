@@ -30,7 +30,7 @@ Route::delete('wisata/{id}', [TempatWisataController::class, 'destroy']);
 // Route::get('bukit/{id}', [TempatWisataController::class, 'image']);
 Route::get('alam', [TempatWisataController::class, 'alam']);
 Route::get('religi', [TempatWisataController::class, 'religi']);
-Route::get('umkm', [TempatWisataController::class, 'umkm']);
+// Route::get('umkm', [TempatWisataController::class, 'umkm']);
 // Route::post('/auth/register', [AuthController::class, 'register']);
 // Route::post('/auth/login', [AuthController::class, 'login']);
 

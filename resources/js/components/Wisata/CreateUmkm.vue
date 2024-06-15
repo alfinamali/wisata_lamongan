@@ -32,6 +32,10 @@
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="form.deskripsi"></textarea>
                             </div>
                             <div class="mb-3">
+                                <label for="lokasi" class="form-label">Lokasi</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="form.lokasi"></textarea>
+                            </div>
+                            <div class="mb-3">
                                 <label for="kontak" class="form-label">Kontak</label>
                                 <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" v-model="form.kontak" />
                             </div>
@@ -66,6 +70,7 @@ export default {
             nama_destinasi: "",
             images: null,
             deskripsi: "",
+            lokasi: "",
             kontak: "",
             maps: "",
         },
@@ -77,6 +82,7 @@ export default {
         formData.append("nama_destinasi", this.form.nama_destinasi);
         formData.append("images", this.form.images);
         formData.append("deskripsi", this.form.deskripsi);
+        formData.append("lokasi", this.form.lokasi);
         formData.append("kontak", this.form.kontak);
         formData.append("maps", this.form.maps);
 
@@ -90,6 +96,7 @@ export default {
             this.form.nama_destinasi = "";
             this.form.images = null;
             this.form.deskripsi = "";
+            this.form.lokasi = "";
             this.form.kontak = "";
             this.form.maps = "";
             // Reset input file

@@ -15,5 +15,6 @@ class umkm extends Model
         'images',
         'kontak',
         'maps',
+        'lokasi',
     ];
 }

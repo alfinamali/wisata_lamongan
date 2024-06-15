@@ -5169,7 +5169,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   // components: { HeaderComponent },
   data: function data() {
     return {
-      destinasi: []
+      destinasi: [],
+      umkm: []
     };
   },
   methods: {
@@ -5191,11 +5192,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    fetchUmkm: function fetchUmkm() {
+      var _this2 = this;
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+        var response;
+        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+          while (1) switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/umkm");
+            case 2:
+              response = _context2.sent;
+              _this2.umkm = response.data.data;
+            case 4:
+            case "end":
+              return _context2.stop();
+          }
+        }, _callee2);
+      }))();
     }
   },
   created: function created() {
     // Panggil method fetchData saat pertama kali dijalankan
     this.fetchData();
+    this.fetchUmkm();
   }
 });
 
@@ -5254,6 +5275,7 @@ __webpack_require__.r(__webpack_exports__);
         nama_destinasi: "",
         images: null,
         deskripsi: "",
+        lokasi: "",
         kontak: "",
         maps: ""
       }
@@ -5266,6 +5288,7 @@ __webpack_require__.r(__webpack_exports__);
       formData.append("nama_destinasi", this.form.nama_destinasi);
       formData.append("images", this.form.images);
       formData.append("deskripsi", this.form.deskripsi);
+      formData.append("lokasi", this.form.lokasi);
       formData.append("kontak", this.form.kontak);
       formData.append("maps", this.form.maps);
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/umkm", formData).then(function (response) {
@@ -5275,6 +5298,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.form.nama_destinasi = "";
         _this.form.images = null;
         _this.form.deskripsi = "";
+        _this.form.lokasi = "";
         _this.form.kontak = "";
         _this.form.maps = "";
         // Reset input file
@@ -6259,7 +6283,7 @@ var render = function render() {
     staticClass: "section-title mb-6"
   }, [_vm._v("WISATA")]), _vm._v(" "), _c("div", {
     staticClass: "row"
-  }, _vm._l(_vm.destinasi, function (item) {
+  }, [_vm._l(_vm.destinasi, function (item) {
     return _c("div", {
       key: item.message,
       staticClass: "col-md-4 d-flex align-items-stretch mb-4"
@@ -6281,7 +6305,29 @@ var render = function render() {
     }, [_c("h5", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("p", {
       staticClass: "font-weight-normal"
     }, [_vm._v("Kategori:" + _vm._s(item.destinasi_id))])])])])]);
-  }), 0)])]);
+  }), _vm._v(" "), _vm._l(_vm.umkm, function (item) {
+    return _c("div", {
+      key: item.message,
+      staticClass: "col-md-4 d-flex align-items-stretch mb-4"
+    }, [_c("a", {
+      staticClass: "portfolio-card",
+      attrs: {
+        href: "#"
+      }
+    }, [_c("img", {
+      staticClass: "portfolio-card-img",
+      attrs: {
+        src: "/storage/images/" + item.images,
+        alt: "Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
+      }
+    }), _vm._v(" "), _c("span", {
+      staticClass: "portfolio-card-overlay"
+    }, [_c("span", {
+      staticClass: "portfolio-card-caption"
+    }, [_c("h5", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("p", {
+      staticClass: "font-weight-normal"
+    }, [_vm._v("Kategori: UMKM")])])])])]);
+  })], 2)])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -6500,6 +6546,34 @@ var render = function render() {
       input: function input($event) {
         if ($event.target.composing) return;
         _vm.$set(_vm.form, "deskripsi", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "mb-3"
+  }, [_c("label", {
+    staticClass: "form-label",
+    attrs: {
+      "for": "lokasi"
+    }
+  }, [_vm._v("Lokasi")]), _vm._v(" "), _c("textarea", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.lokasi,
+      expression: "form.lokasi"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      id: "exampleFormControlTextarea1",
+      rows: "3"
+    },
+    domProps: {
+      value: _vm.form.lokasi
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "lokasi", $event.target.value);
       }
     }
   })]), _vm._v(" "), _c("div", {
@@ -6926,7 +7000,7 @@ var render = function render() {
       attrs: {
         src: "/storage/images/" + item.images
       }
-    })]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.deskripsi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.kontak))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.maps))]), _vm._v(" "), _c("td", [_c("router-link", {
+    })]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.deskripsi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.lokasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.kontak))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.maps))]), _vm._v(" "), _c("td", [_c("router-link", {
       staticClass: "btn btn-sm btn-primary mr-1",
       attrs: {
         to: "update-umkm"
@@ -6971,6 +7045,10 @@ var staticRenderFns = [function () {
       scope: "col"
     }
   }, [_vm._v("DESKRIPSI")]), _vm._v(" "), _c("th", {
+    attrs: {
+      scope: "col"
+    }
+  }, [_vm._v("LOKASI")]), _vm._v(" "), _c("th", {
     attrs: {
       scope: "col"
     }

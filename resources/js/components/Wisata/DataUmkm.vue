@@ -26,6 +26,7 @@
                             <th scope="col">GAMBAR</th>
                             <th scope="col">NAMA UMKM</th>
                             <th scope="col">DESKRIPSI</th>
+                            <th scope="col">LOKASI</th>
                             <th scope="col">KONTAK</th>
                             <th scope="col">MAPS</th>
                             <th scope="col">AKSI</th>
@@ -38,6 +39,7 @@
                             </td>
                             <td>{{ item.nama_destinasi }}</td>
                             <td>{{ item.deskripsi }}</td>
+                            <td>{{ item.lokasi }}</td>
                             <td>{{ item.kontak }}</td>
                             <td>{{ item.maps }}</td>
                             <td>
