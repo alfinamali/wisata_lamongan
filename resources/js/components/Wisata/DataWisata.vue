@@ -47,7 +47,7 @@
                             <td>{{ item.fasilitas }}</td>
                             <td>{{ item.maps }}</td>
                             <td>
-                              <router-link to="update-wisata" class="btn btn-sm btn-primary mr-1"><i class="fas fa-edit"></i></router-link>
+                              <router-link :to="'/update-wisata/' + item.id" class="btn btn-sm btn-primary mr-1"><i class="fas fa-edit"></i></router-link>
                               <button class="btn btn-sm btn-danger mr-1" @click="hapusdata(item.id)"><i class="fas fa-trash-alt"></i></button>
                             </td>
                           </tr>

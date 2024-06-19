@@ -15,6 +15,13 @@
                         </span>
                     </a>
                 </div>
+              </div><!-- end of row -->
+              
+        </div><!-- end of container -->
+        <div class="container text-center">
+            <h6 class="section-title mb-6">UMKM</h6>
+            <!-- row -->
+            <div class="row">
                 <div class="col-md-4 d-flex align-items-stretch mb-4" v-for="item in umkm" :key="item.message">
                     <a href="#" class="portfolio-card">
                         <img :src="'/storage/images/' + item.images"  class="portfolio-card-img" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">

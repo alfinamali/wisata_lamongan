@@ -36,7 +36,7 @@
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="form.lokasi"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="kontak" class="form-label">Kontak</label>
+                                <label for="kontak" class="form-label">Kontak (format: +62....)</label>
                                 <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" v-model="form.kontak" />
                             </div>
                             <div class="mb-3">

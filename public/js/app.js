@@ -5828,7 +5828,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         images: null,
         deskripsi: "",
         lokasi: "",
-        harga: ""
+        harga: "",
+        fasilitas: "",
+        maps: ""
       },
       fileName: "",
       itemID: null
@@ -5860,10 +5862,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var formData = new FormData();
       formData.append("nama_destinasi", this.items.nama_destinasi);
       formData.append("destinasi_id", this.items.destinasi_id);
-      formData.append("images", this.items.images);
       formData.append("deskripsi", this.items.deskripsi);
       formData.append("lokasi", this.items.lokasi);
       formData.append("harga", this.items.harga);
+      formData.append("fasilitas", this.items.fasilitas);
+      formData.append("maps", this.items.maps);
+      if (this.items.images) {
+        // Periksa tipe file dan ukuran file setelah file diunggah
+        var allowedTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+        if (!allowedTypes.includes(this.items.images.type)) {
+          alert("File harus berupa gambar (jpeg, png, jpg, gif)");
+          return;
+        }
+        if (this.items.images.size > 2048 * 1024) {
+          alert("Ukuran file terlalu besar. Maksimum 2MB");
+          return;
+        }
+        formData.append("images", this.items.images);
+      }
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/wisata/".concat(this.itemID), formData).then(function (response) {
         console.log(response);
         _this2.showAlert();
@@ -5872,25 +5888,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     },
     previewFiles: function previewFiles() {
-      var _this3 = this;
       var file = this.$refs.myImage.files[0];
       this.fileName = file.name;
       this.items.images = file;
       var reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = function (e) {
-        _this3.items.images = e.target.result;
+        // Anda seharusnya tidak mengubah items.images ke e.target.result di sini
+        // this.items.images = e.target.result;
       };
     },
     showAlert: function showAlert() {
-      var _this4 = this;
+      var _this3 = this;
       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
         title: "Data Berhasil di update!",
         icon: "success",
         confirmButtonText: "OK"
       }).then(function () {
         // Redirect to the previous page
-        _this4.$router.go(-1);
+        _this3.$router.go(-1);
       });
     }
   },
@@ -6254,7 +6270,7 @@ var render = function render() {
     staticClass: "section-title mb-6"
   }, [_vm._v("WISATA")]), _vm._v(" "), _c("div", {
     staticClass: "row"
-  }, [_vm._l(_vm.destinasi, function (item) {
+  }, _vm._l(_vm.destinasi, function (item) {
     return _c("div", {
       key: item.message,
       staticClass: "col-md-4 d-flex align-items-stretch mb-4"
@@ -6276,7 +6292,13 @@ var render = function render() {
     }, [_c("h5", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("p", {
       staticClass: "font-weight-normal"
     }, [_vm._v("Kategori:" + _vm._s(item.destinasi_id))])])])])]);
-  }), _vm._v(" "), _vm._l(_vm.umkm, function (item) {
+  }), 0)]), _vm._v(" "), _c("div", {
+    staticClass: "container text-center"
+  }, [_c("h6", {
+    staticClass: "section-title mb-6"
+  }, [_vm._v("UMKM")]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, _vm._l(_vm.umkm, function (item) {
     return _c("div", {
       key: item.message,
       staticClass: "col-md-4 d-flex align-items-stretch mb-4"
@@ -6298,7 +6320,7 @@ var render = function render() {
     }, [_c("h5", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("p", {
       staticClass: "font-weight-normal"
     }, [_vm._v("Kategori: UMKM")])])])])]);
-  })], 2)])]);
+  }), 0)])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -6542,7 +6564,7 @@ var render = function render() {
     attrs: {
       "for": "kontak"
     }
-  }, [_vm._v("Kontak")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Kontak (format: +62....)")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -7082,7 +7104,7 @@ var render = function render() {
     })]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.nama_destinasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.destinasi_id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.deskripsi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.lokasi))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.harga))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.fasilitas))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.maps))]), _vm._v(" "), _c("td", [_c("router-link", {
       staticClass: "btn btn-sm btn-primary mr-1",
       attrs: {
-        to: "update-wisata"
+        to: "/update-wisata/" + item.id
       }
     }, [_c("i", {
       staticClass: "fas fa-edit"
@@ -7652,15 +7674,12 @@ var render = function render() {
     attrs: {
       type: "file",
       id: "images",
-      name: "images",
-      placeholder: "input image"
+      name: "images"
     },
     on: {
       change: _vm.previewFiles
     }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "col-sm-6 customPadding"
-  }, [_c("p", [_vm._v(_vm._s(_vm.fileName))])])]), _vm._v(" "), _c("div", {
+  })]), _vm._v(" "), _c("div", {
     staticClass: "mb-3"
   }, [_c("label", {
     staticClass: "form-label",
@@ -7677,7 +7696,8 @@ var render = function render() {
     staticClass: "form-control form-control-sm",
     attrs: {
       type: "text",
-      "aria-label": ".form-control-sm example"
+      "aria-label": ".form-control-sm example",
+      name: "nama_destinasi"
     },
     domProps: {
       value: _vm.items.nama_destinasi
@@ -7705,7 +7725,8 @@ var render = function render() {
     staticClass: "form-control form-control-sm",
     attrs: {
       type: "text",
-      "aria-label": ".form-control-sm example"
+      "aria-label": ".form-control-sm example",
+      name: "destinasi_id"
     },
     domProps: {
       value: _vm.items.destinasi_id
@@ -7732,8 +7753,9 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
-      id: "exampleFormControlTextarea1",
-      rows: "3"
+      id: "deskripsi",
+      rows: "3",
+      name: "deskripsi"
     },
     domProps: {
       value: _vm.items.deskripsi
@@ -7761,7 +7783,8 @@ var render = function render() {
     staticClass: "form-control form-control-sm",
     attrs: {
       type: "text",
-      "aria-label": ".form-control-sm example"
+      "aria-label": ".form-control-sm example",
+      name: "lokasi"
     },
     domProps: {
       value: _vm.items.lokasi
@@ -7777,7 +7800,7 @@ var render = function render() {
   }, [_c("label", {
     staticClass: "form-label",
     attrs: {
-      "for": "lokasi"
+      "for": "harga"
     }
   }, [_vm._v("Harga")]), _vm._v(" "), _c("input", {
     directives: [{
@@ -7789,7 +7812,8 @@ var render = function render() {
     staticClass: "form-control form-control-sm",
     attrs: {
       type: "text",
-      "aria-label": ".form-control-sm example"
+      "aria-label": ".form-control-sm example",
+      name: "harga"
     },
     domProps: {
       value: _vm.items.harga
@@ -7800,6 +7824,64 @@ var render = function render() {
         _vm.$set(_vm.items, "harga", $event.target.value);
       }
     }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "mb-3"
+  }, [_c("label", {
+    staticClass: "form-label",
+    attrs: {
+      "for": "fasilitas"
+    }
+  }, [_vm._v("Fasilitas")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.items.fasilitas,
+      expression: "items.fasilitas"
+    }],
+    staticClass: "form-control form-control-sm",
+    attrs: {
+      type: "text",
+      "aria-label": ".form-control-sm example",
+      name: "fasilitas"
+    },
+    domProps: {
+      value: _vm.items.fasilitas
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.items, "fasilitas", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "mb-3"
+  }, [_c("label", {
+    staticClass: "form-label",
+    attrs: {
+      "for": "maps"
+    }
+  }, [_vm._v("Maps")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.items.maps,
+      expression: "items.maps"
+    }],
+    staticClass: "form-control form-control-sm",
+    attrs: {
+      type: "text",
+      "aria-label": ".form-control-sm example",
+      name: "maps"
+    },
+    domProps: {
+      value: _vm.items.maps
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.items, "maps", $event.target.value);
+      }
+    }
   })]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-md btn-primary",
     attrs: {
@@ -7808,8 +7890,7 @@ var render = function render() {
   }, [_vm._v("Save")]), _vm._v(" "), _c("router-link", {
     staticClass: "btn btn-md btn-warning",
     attrs: {
-      to: "data-wisata",
-      type: "submit"
+      to: "data-wisata"
     }
   }, [_vm._v("Back")])], 1)])])])])])])])], 1);
 };
@@ -7945,7 +8026,7 @@ var routes = [{
   name: 'create-umkm',
   component: _components_Wisata_CreateUmkm_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
 }, {
-  path: "/update-wisata",
+  path: "/update-wisata/:id",
   name: 'update-wisata',
   component: _components_Wisata_UpdateWisata_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
 }, {
