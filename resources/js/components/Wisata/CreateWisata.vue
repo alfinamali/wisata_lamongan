@@ -95,7 +95,7 @@ export default {
         let formData = new FormData();
         formData.append("nama_destinasi", this.form.nama_destinasi);
         formData.append("destinasi_id", this.form.destinasi_id);
-        formData.append("images", this.form.images); // tambahkan field image ke objek FormData
+        formData.append("images", this.form.images); 
         formData.append("deskripsi", this.form.deskripsi);
         formData.append("lokasi", this.form.lokasi);
         formData.append("harga", this.form.harga);
@@ -106,7 +106,6 @@ export default {
             .post("/api/wisata", formData)
             .then((response) => {
             console.log(response);
-            // reset form
             swal.fire('Success', 'Form submitted successfully', 'success');
 
             this.form.nama_destinasi = "";

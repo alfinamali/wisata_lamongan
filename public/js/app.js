@@ -5222,34 +5222,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarComponent.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarComponent.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************************/
-/***/ (() => {
-
-
-// export default {
-//   methods: {
-//     logout() {
-//       axios.post('/logout')
-//         .then(response => {
-//           // Menghandle respon logout yang sukses
-//           console.log(response.data.message);
-//           // Redirect ke halaman login
-//           window.location.href = '/login';
-//         })
-//         .catch(error => {
-//           // Menghandle error saat logout
-//           console.error(error);
-//         });
-//     }
-//   }
-// }
-//
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Wisata/CreateUmkm.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Wisata/CreateUmkm.vue?vue&type=script&lang=js& ***!
@@ -5366,7 +5338,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var formData = new FormData();
       formData.append("nama_destinasi", this.form.nama_destinasi);
       formData.append("destinasi_id", this.form.destinasi_id);
-      formData.append("images", this.form.images); // tambahkan field image ke objek FormData
+      formData.append("images", this.form.images);
       formData.append("deskripsi", this.form.deskripsi);
       formData.append("lokasi", this.form.lokasi);
       formData.append("harga", this.form.harga);
@@ -5374,7 +5346,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       formData.append("maps", this.form.maps);
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/wisata", formData).then(function (response) {
         console.log(response);
-        // reset form
         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire('Success', 'Form submitted successfully', 'success');
         _this.form.nama_destinasi = "";
         _this.form.destinasi_id = "";
@@ -6349,24 +6320,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var render = function render() {
   var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
+    _c = _vm._self._c;
   return _c("aside", {
     staticClass: "main-sidebar sidebar-light-primary elevation-4 border-bottom-0"
-  }, [_c("a", {
-    staticClass: "brand-link bg-primary",
-    attrs: {
-      href: "#"
-    }
-  }, [_c("img", {
-    staticClass: "brand-image img-circle elevation-3",
-    attrs: {
-      src: "/gambar/tugu_lmg.png",
-      alt: "AdminLTE Logo"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "brand-text font-weight-dark"
-  }, [_vm._v("WisDeket")])]), _vm._v(" "), _c("div", {
+  }, [_c("div", {
     staticClass: "sidebar"
   }, [_c("div", {
     staticClass: "user-panel mt-3 pb-3 mb-3 d-flex"
@@ -6375,7 +6332,7 @@ var render = function render() {
   }, [_c("img", {
     staticClass: "img-circle elevation-2",
     attrs: {
-      src: "/gambar/su.png",
+      src: "/gambar/tugu_lmg.png",
       alt: "User Image"
     }
   })]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("nav", {
@@ -6388,38 +6345,40 @@ var render = function render() {
       "data-accordion": "false"
     }
   }, [_c("li", {
-    staticClass: "nav-item menu-open"
+    staticClass: "nav-item"
   }, [_c("router-link", {
-    staticClass: "nav-link active",
+    staticClass: "nav-link",
     attrs: {
-      to: "home"
+      to: "home",
+      "active-class": "active"
     }
   }, [_c("i", {
     staticClass: "nav-icon fas fa-home"
-  }), _vm._v(" "), _c("p", [_vm._v("\r\n                            Dashboard\r\n                        ")])])], 1), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("p", [_vm._v("\n                            Dashboard\n                        ")])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link",
     attrs: {
-      to: "data-wisata"
+      to: "data-wisata",
+      "active-class": "active"
     }
   }, [_c("i", {
     staticClass: "nav-icon fas fa-atlas"
-  }), _vm._v(" "), _c("p", [_vm._v("\r\n                            Data Wisata Lamongan\r\n                        ")])])], 1), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("p", [_vm._v("\n                            Data Wisata Lamongan\n                        ")])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link",
     attrs: {
-      to: "data-umkm"
+      to: "data-umkm",
+      "active-class": "active"
     }
   }, [_c("i", {
     staticClass: "nav-icon fas fa-atlas"
-  }), _vm._v(" "), _c("p", [_vm._v("\r\n                            Data UMKM Lamongan\r\n                        ")])])], 1)])])])]);
+  }), _vm._v(" "), _c("p", [_vm._v("\n                            Data UMKM Lamongan\n                        ")])])], 1)])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
+    _c = _vm._self._c;
   return _c("div", {
     staticClass: "info"
   }, [_c("a", {
@@ -34846,20 +34805,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _SidebarComponent_vue_vue_type_template_id_54833a28___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SidebarComponent.vue?vue&type=template&id=54833a28& */ "./resources/js/components/SidebarComponent.vue?vue&type=template&id=54833a28&");
-/* harmony import */ var _SidebarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SidebarComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/SidebarComponent.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
-/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _SidebarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _SidebarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[__WEBPACK_IMPORT_KEY__]
-/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-
-
+var script = {}
 
 
 /* normalize component */
 ;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SidebarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
   _SidebarComponent_vue_vue_type_template_id_54833a28___WEBPACK_IMPORTED_MODULE_0__.render,
   _SidebarComponent_vue_vue_type_template_id_54833a28___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
@@ -35276,26 +35230,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PortoComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PortoComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PortoComponent.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PortoComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/SidebarComponent.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/components/SidebarComponent.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SidebarComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarComponent.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
-/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
-/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default())); 
 
 /***/ }),
 
