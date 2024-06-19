@@ -31,7 +31,7 @@ export const routes = [
         component: CreateUmkm
     },
     {
-        path: "/update-wisata",
+        path: "/update-wisata/:id",
         name: 'update-wisata',
         component: UpdateWisata
     },

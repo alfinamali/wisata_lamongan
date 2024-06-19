@@ -113,26 +113,28 @@ class TempatWisataController extends Controller
             'nama_destinasi' => 'required',
             'destinasi_id' => 'required',
             'deskripsi' => 'required',
-            'images' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'lokasi' => 'required',
             'harga' => 'required',
             'fasilitas' => 'required',
             'maps' => 'required',
+            'images' => 'sometimes|nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
-        $images = $request->file('images');
-
-        $images->storeAs('public/images', $images->hashName());
 
         $tempatWisata = TempatWisata::find($id);
         $tempatWisata->nama_destinasi = $request->nama_destinasi;
         $tempatWisata->destinasi_id = $request->destinasi_id;
         $tempatWisata->deskripsi = $request->deskripsi;
-        $tempatWisata->images = $images->hashName();
         $tempatWisata->lokasi = $request->lokasi;
         $tempatWisata->harga = $request->harga;
         $tempatWisata->fasilitas = $request->fasilitas;
         $tempatWisata->maps = $request->maps;
+
+        if ($request->hasFile('images')) {
+            $image = $request->file('images');
+            $fileName = $image->hashName(); // Generate unique file name
+            $image->storeAs('public/images', $fileName); // Store the file
+            $tempatWisata->images = $fileName; // Save file name to database
+        }
 
         $tempatWisata->save();
 
@@ -140,6 +142,8 @@ class TempatWisataController extends Controller
             'data' => $tempatWisata
         ]);
     }
+
+
 
     /**
      * Remove the specified resource from storage.
